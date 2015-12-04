@@ -14,21 +14,20 @@ public class IceCream extends DessertItem{
         super(name);
         this.cost = cost;
     }
-    
-//    public abstract void name();
-//    
-//    public abstract void cost();
-
   
     @Override
     public String toString()
     {
-     return "";
+        String output = "";
+        output += getName();    
+        int widthIceCream = DessertShoppe.RECEIPT_WIDTH - getName().length();       
+        output += String.format("%" + widthIceCream + "s", DessertShoppe.cents2dollarsAndCents(getCost()));
+        return output;
     }
 
     @Override
     public int getCost() {
-        
+        return cost;
     }
     
 }

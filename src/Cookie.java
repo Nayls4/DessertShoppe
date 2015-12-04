@@ -13,14 +13,12 @@ public class Cookie extends DessertItem{
     private int pricePer12;
     private int cost;
     
-    
     public Cookie(String name, int number, int pricePer12)
     {
         super(name);
         this.number = number;
         this.pricePer12 = pricePer12;
     } 
-
     
     
     @Override
@@ -30,15 +28,13 @@ public class Cookie extends DessertItem{
         output += number + " @ $" + DessertShoppe.cents2dollarsAndCents(pricePer12) + "/dz \n";
         output += getName();    
         int widthCookie = DessertShoppe.RECEIPT_WIDTH - getName().length();       
-        output += String.format("%" + widthCookie + "s%n", DessertShoppe.cents2dollarsAndCents(getCost()));
-
-       return output;
+        output += String.format("%" + widthCookie + "s", DessertShoppe.cents2dollarsAndCents(getCost()));
+        return output;
     }
 
     @Override
     public int getCost() {
-        cost = Math.round((int)(pricePer12/12)*number);
-        return cost;
-        
+        cost = (int) Math.round(number*(pricePer12/12));
+        return cost;       
     } 
 }

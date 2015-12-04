@@ -28,14 +28,13 @@ public class Candy extends DessertItem{
         output += weight + " lbs. @ $" + DessertShoppe.cents2dollarsAndCents(pricePerLbs) + "/lb. \n";
         output += getName();        
         int widthCandy = DessertShoppe.RECEIPT_WIDTH - getName().length();       
-        output += String.format("%" + widthCandy + "s%n", DessertShoppe.cents2dollarsAndCents(getCost()));
-
-       return output;
+        output += String.format("%" + widthCandy + "s", DessertShoppe.cents2dollarsAndCents(getCost()));        
+        return output;
     }
 
     @Override
     public int getCost() {
-        cost = Math.round((int)(this.pricePerLbs*this.weight));
+        cost = (int) Math.round((this.weight*this.pricePerLbs));
         return cost;
     }
 }
