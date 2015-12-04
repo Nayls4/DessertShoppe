@@ -15,6 +15,7 @@ public class Candy extends DessertItem{
 
     public Candy(String name, double weight, int pricePerLbs)
     {
+        //give to the super class
         super(name);
         this.weight = weight;
         this.pricePerLbs = pricePerLbs;
