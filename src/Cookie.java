@@ -15,6 +15,7 @@ public class Cookie extends DessertItem{
     
     public Cookie(String name, int number, int pricePer12)
     {
+        //give to the super class
         super(name);
         this.number = number;
         this.pricePer12 = pricePer12;

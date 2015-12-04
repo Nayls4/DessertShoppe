@@ -11,6 +11,7 @@ public class IceCream extends DessertItem{
 
     public IceCream(String name, int cost)
     {
+        //give to the super class
         super(name);
         this.cost = cost;
     }
